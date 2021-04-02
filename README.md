@@ -84,7 +84,7 @@ sensor:
         window_size: 00:30
 ```
 
-![Pwrsensor filtered power value](/images/pwrmeter_filtered.png)
+![Pwrsensor filtered power value](/images/pwrsensor_filtered.png)
 
 
 <br><br>
