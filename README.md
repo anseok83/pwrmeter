@@ -16,12 +16,12 @@ Pwrmeter (Power meter) is a Arduino-based instantaneous power meter using SCT-01
 ![Pwrmeter sensor](/images/pwrmeter_sensor.png)
 
 * Notes:
-- Circuit of pwrmeter is referred from https://learn.openenergymonitor.org/electricity-monitoring/ct-sensors/interface-with-arduino
-- We used a 120 ohm for burden resistor. (Maximum current is limited to ~ 30A.
+Circuit of pwrmeter is referred from https://learn.openenergymonitor.org/electricity-monitoring/ct-sensors/interface-with-arduino
+We used a 120 ohm for burden resistor. (Maximum current is limited to ~ 30A.
 
 * Connections
-- A0 [CURRENT_MEASURE_PIN] : To measure an instantaneous current value. Measuring a voltage on the burden resistor.
-- D15 [TRIGGER_PIN] : To reset Wifi configuration.
+A0 [CURRENT_MEASURE_PIN] : To measure an instantaneous current value. Measuring a voltage on the burden resistor.
+D15 [TRIGGER_PIN] : To reset Wifi configuration.
 
 ## Software components (including libraries):
 
@@ -42,7 +42,7 @@ REST address to get the power value : http://[Your_pwrsensor_IP_address]/powerMe
 
 Example:
 ```
-curl -v http://192.168.1.228/powerMeasure
+~$curl -v http://192.168.1.228/powerMeasure
 *   Trying 192.168.1.228:80...
 * TCP_NODELAY set
 * Connected to 192.168.1.228 (192.168.1.228) port 80 (#0)
@@ -60,6 +60,7 @@ curl -v http://192.168.1.228/powerMeasure
 < 
 {"powerMeasure": 0.302 "id": "1", "name": "powme", "hardware": "esp8266", "connected": true}
 * Closing connection 0
+~$
 ```
 
 ## Homeassistant integration
@@ -83,6 +84,7 @@ sensor:
         window_size: 00:30
 ```
 
+![Pwrsensor filtered power value](/images/pwrmeter_filtered.png)
 
 
 <br><br>
